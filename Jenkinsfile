@@ -44,7 +44,7 @@ node {
            
             stage('Build docker image') {
                 echo 'building docker image from Dockerfile'
-                sh "${dockerCMD} build -t shubhamkushwah123/addressbook:1.0 ."
+                sh "${dockerCMD} build -t shubhamkushwah123/addressbook:2.0 ."
             }
             
             stage('Push docker image') {
