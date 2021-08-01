@@ -14,11 +14,11 @@ node {
                 echo 'preparing the environment'
                 docker = tool name: 'docker', type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
                 dockerCMD = "$docker/bin/docker"
-                ipAddress = "18.216.95.128"
+                ipAddress = "18.117.187.217"
                 aptUpdate = "sudo apt update"
                 dockerInstall = "sudo apt install -y docker.io"
-                dockerStart = "sudo service docker start"
-                dockerRun = "sudo docker run -itd -p 8082:8080 --name=addressbook shubhamkushwah123/addressbook:1.0"
+                dockerStart = "sudo service docker start
+                dockerRun = "sudo docker run -d -p 8082:8080 --name=addressbook shubhamkushwah123/addressbook:2.0"
                 user = "ubuntu"
            }
            
@@ -53,7 +53,7 @@ node {
                    sh "${dockerCMD} login -u shubhamkushwah123 -p ${dockerHubPwd}"
                 }
                 echo 'pushing image on docker hub'
-             //  sh "${dockerCMD} push shubhamkushwah123/addressbook:1.0"
+                sh "${dockerCMD} push shubhamkushwah123/addressbook:2.0"
              }
               
             stage('Run Apt Update'){
