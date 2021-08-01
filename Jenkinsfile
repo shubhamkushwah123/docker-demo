@@ -18,7 +18,7 @@ node {
                 aptUpdate = "sudo apt update"
                 dockerInstall = "sudo apt install -y docker.io"
                 dockerStart = "sudo service docker start"
-                dockerRun = "sudo docker run -itd -p 80:8080 --name=addressbook shubhamkushwah123/addressbook:1.0"
+                dockerRun = "sudo docker run -itd -p 8082:8080 --name=addressbook shubhamkushwah123/addressbook:1.0"
                 user = "ubuntu"
            }
            
