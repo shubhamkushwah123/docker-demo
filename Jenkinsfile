@@ -14,7 +14,7 @@ node {
                 echo 'preparing the environment'
                 docker = tool name: 'docker', type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
                 dockerCMD = "$docker/bin/docker"
-                ipAddress = "18.188.128.194"
+                ipAddress = "18.216.95.128"
                 aptUpdate = "sudo apt update"
                 dockerInstall = "sudo apt install -y docker.io"
                 dockerStart = "sudo service docker start"
@@ -50,7 +50,7 @@ node {
             stage('Push docker image') {
                 echo 'Authenticating user to push image on Docker hub'
                 withCredentials([string(credentialsId: 'dockerPwd', variable: 'dockerHubPwd')]) {
-            //    sh "${dockerCMD} login -u shubhamkushwah123 -p ${dockerHubPwd}"
+                   sh "${dockerCMD} login -u shubhamkushwah123 -p ${dockerHubPwd}"
                 }
                 echo 'pushing image on docker hub'
              //  sh "${dockerCMD} push shubhamkushwah123/addressbook:1.0"
